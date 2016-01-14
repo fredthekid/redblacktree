@@ -234,7 +234,6 @@ class RedBlackTree(object):
         currNode = new_node
         count = 0
         while currNode.parent.getColor() == "RED":
-            print count
             # if current node's parent is a LEFT CHILD of the current node's grandparent
             if currNode.parent == currNode.parent.parent.left:
                 uncleNode = currNode.parent.parent.right
@@ -270,8 +269,6 @@ class RedBlackTree(object):
                     currNode.parent.setColor('b')
                     currNode.parent.parent.setColor('r')
                     self.leftRotation(currNode.parent.parent)
-        count += 1
-
         self.RootNode.setColor('b')
 
     def tree_to_array(self):
